@@ -1,0 +1,21 @@
+{
+  "name": "zorix-ai",
+  "version": "1.0.0",
+  "description": "Zorix AI Desktop source",
+  "main": "main.js",
+  "author": "Zorix",
+  "license": "MIT",
+  "scripts": {
+    "prepare-mac": "echo Move this folder to macOS, then run: npm install && npm run dist",
+    "zip": "cd .. && zip -r zorix-ai-app.zip zorix-ai-app"
+  },
+  "build": {
+    "appId": "it.zorix.ai",
+    "productName": "Zorix AI",
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.productivity"
+    }
+  },
+  "devDependencies": {}
+}

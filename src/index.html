@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zorix AI</title>
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0b0f17;
+  color: white;
+}
+.app {
+  display: flex;
+  height: 100vh;
+}
+.sidebar {
+  width: 250px;
+  background: #111827;
+  border-right: 1px solid #263244;
+  padding: 16px;
+}
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.model {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: #1f2937;
+}
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  padding: 18px;
+  border-bottom: 1px solid #263244;
+  font-size: 20px;
+  font-weight: 700;
+}
+.chat {
+  flex: 1;
+  padding: 24px;
+  overflow: auto;
+}
+.msg {
+  max-width: 680px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  background: #1f2937;
+}
+.user {
+  margin-left: auto;
+  background: #2563eb;
+}
+.input {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+  border-top: 1px solid #263244;
+}
+input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: #111827;
+  color: white;
+}
+button {
+  padding: 0 22px;
+  border: none;
+  border-radius: 14px;
+  background: #00e5ff;
+  color: #001014;
+  font-weight: 800;
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="sidebar">
+    <div class="logo">Zorix AI</div>
+    <div class="model">Zorix Sana 1</div>
+    <div class="model">Zorix Nex 1.5</div>
+    <div class="model">Zorix Coder 2</div>
+  </div>
+
+  <div class="main">
+    <div class="header">Zorix AI Chat</div>
+    <div class="chat" id="chat">
+      <div class="msg">你好，我是 Zorix AI。</div>
+    </div>
+
+    <div class="input">
+      <input id="text" placeholder="Message Zorix AI...">
+      <button onclick="send()">Send</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function send() {
+  const input = document.getElementById("text");
+  const chat = document.getElementById("chat");
+  const text = input.value.trim();
+  if (!text) return;
+
+  chat.innerHTML += `<div class="msg user">${text}</div>`;
+  chat.innerHTML += `<div class="msg">这是 Zorix AI 的测试回复。</div>`;
+  input.value = "";
+  chat.scrollTop = chat.scrollHeight;
+}
+</script>
+</body>
+</html>

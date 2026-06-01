@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "prepare-mac": "echo Move this folder to macOS, then run: npm install && npm run dist",
-    "zip": "cd .. && zip -r zorix-ai-app.zip zorix-ai-app"
+    "zip": "cd .. && zip -r zorix-ai-app.zip zorix-ai-app",
+    "dist": "electron-builder --mac dmg"
   },
   "build": {
     "appId": "it.zorix.ai",
@@ -17,5 +18,11 @@
       "category": "public.app-category.productivity"
     }
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "electron": "^42.3.0",
+    "electron-builder": "^26.8.1"
+  },
+  "dependencies": {
+    "marked": "^18.0.4"
+  }
 }
